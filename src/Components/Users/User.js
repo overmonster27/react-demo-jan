@@ -1,6 +1,7 @@
 const User = (user) => {
     const {id, name} = User;
 
+
     return (
         <div>
             <div>Id: {id}</div>

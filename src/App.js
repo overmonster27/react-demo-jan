@@ -6,7 +6,6 @@ import {Character_component} from "./Components/Main_components/Character_compon
 function App() {
     return (
         <div className="App">
-            {/* eslint-disable-next-line react/jsx-pascal-case */}
             <Character_component/>
         </div>
     );

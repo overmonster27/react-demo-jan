@@ -3,9 +3,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      App test change
+      App
     </div>
   );
 }
-
 export default App;

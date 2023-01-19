@@ -5,6 +5,7 @@ const User = (user) => {
     return (
         <div>
             <div>Id: {id}</div>
+
             <div>Name: {name}</div>
         </div>
     );

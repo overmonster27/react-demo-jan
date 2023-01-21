@@ -13,7 +13,7 @@ const Posts = ({userId}) => {
 
     return (
         <div className='Posts'>
-            <h1 className='Header'>Posts</h1>
+            <div className='Header'><b>Posts</b></div>
             {posts.map(post => <Post key={post.id} post={post}/>)}
         </div>
     );

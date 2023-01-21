@@ -1,3 +1,25 @@
-.App{
-    text-align: center;
+.Picture{
+    width: 200px;
+    height: 200px;
+}
+.Rockets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+.Rocket{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 5px;
+
+    width: 300px;
+    height: 300px;
+
+    border: 2px solid black;
+    border-radius: 10px;
 }

@@ -1,3 +1,41 @@
-.App{
+.Users{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+.User{
+    height: 100px;
+    width: 18%;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    margin: 5px;
+    padding: 5px;
+
+}
+.Header{
+    width: 100%;
     text-align: center;
+}
+.Posts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+.Post{
+    height: 200px;
+    width: 18%;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    margin: 5px;
+    padding: 5px;
 }

@@ -1,16 +1,18 @@
 import {useEffect, useState} from "react";
 
 import {Rocket} from "../Rocket/Rocket";
+import {getLaunches} from "../../Services/axiosService";
 
 const Rockets = () => {
 
     let [rockets, setRockets] = useState([]);
 
     useEffect(() => {
-
-        fetch('https://api.spacexdata.com/v3/launches/')
-            .then(response => response.json())
-            .then(value => setRockets(value.filter(value => value.launch_year !== '2020')))
+        async function getAll() {
+            const allLaunches = await getLaunches()
+            setRockets(allLaunches.filter(launch => launch.launch_year !== '2020'))
+        }
+        getAll()
     }, [])
 
 

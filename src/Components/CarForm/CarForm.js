@@ -1,40 +1,61 @@
 import {useForm} from "react-hook-form";
-import {all} from "axios";
+import {joiResolver} from "@hookform/resolvers/joi";
+import {useEffect} from "react";
 
-const CarForm = () => {
+import {carValidator} from "../../CarValidator";
+import {carService} from "../../Services";
 
-    const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({mode: 'all'})
+const CarForm = ({setCars, updateCar}) => {
 
-    const submit = (allInfFormForm) => {
-        console.log(allInfFormForm)
-    }
+    const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({
+        mode: 'all',
+        resolver: joiResolver(carValidator)
+    });
 
-    return (<form onSubmit={handleSubmit(submit)}>
+    const submit = async (allInfFormForm) => {
 
-        <input type='text' placeholder={'brand'} {...register('brand', {
-            pattern: {
-                value: /^[a-zA-Zа-яА-яёЁіІїЇ]{1,20}$/,
-                message: 'Не повинен містити літери'
+        const {data} = await carService.create(allInfFormForm);
+        setCars(previousStateValue => [...previousStateValue, data]);
+        reset();
+    };
+
+    const update = async (updatedCar) => {
+
+        const {data} = await carService.updateById(updatedCar.id, updatedCar);
+        setCars(previousStateValue => previousStateValue.map(car => {
+            if (car.id !== updatedCar.id) {
+                return car
             }
-        })}/>
-        {errors.brand && <div>{errors.brand.message}</div>}
+            return data
+        }));
+        reset();
+    };
 
-        <input type='text' placeholder={'price'} {...register('price', {
-            valueAsNumber: true,
-            min: {value: 0, message: 'min 0'},
-            max: {value: 1000000, message: 'max 1000000'},
+    useEffect(() => {
+        if (updateCar) {
+            setValue('brand', updateCar.brand)
+            setValue('price', updateCar.price)
+            setValue('year', updateCar.year)
+        }
+    }, [updateCar, setValue]);
 
-        })}/>
-        {errors.price && <div>{errors.price.message}</div>}
+    return (<form
+        className='formClass'
+        onSubmit={updateCar ? handleSubmit((newData) => update({...newData, id: updateCar.id})) : handleSubmit(submit)}>
 
-        <input type='text' placeholder={'year'} {...register('year', {
-            valueAsNumber: true,
-            min: {value: 1990, message: 'min1990'},
-            max: {value: new Date().getFullYear(), message:` max ${new Date().getFullYear()}`}
-        })}/>
-        {errors.year && <div>{errors.year.message}</div>}
+        <div className='divInput'><input type='text' placeholder={'Brand'} {...register('brand')}/>
+            {errors.brand && <div className='massageClass'>{errors.brand.message}</div>}</div>
 
-        <button>Confirm</button>
+        <div className='divInput'><input type='text' placeholder={'Price'} {...register('price')}/>
+            {errors.price && <div>{errors.price.message}</div>}
+        </div>
+
+        <div className='divInput'><input type='text' placeholder={'Year'} {...register('year')}/>
+            {errors.year && <div>{errors.year.message}</div>}
+        </div>
+
+        <button disabled={!isValid}>{updateCar ? 'Update' : 'Create'}</button>
+
     </form>);
 }
 

@@ -3,9 +3,25 @@
     flex-direction: row;
     justify-content: space-evenly;
 
-    text-decoration: none
-;
-
     background: silver;
 
+}
+.Header a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.Header a[class='active']{
+    color: red;
+}
+.Post{
+    border: 2px solid black;
+
+    margin: 5px;
+
+    width: 200px;
+}
+.PostPage{
+    display: flex;
+    flex-direction: row;
 }

@@ -1,9 +1,13 @@
+import {Posts} from "../../Components";
+import {Outlet} from "react-router-dom";
+
 const PostPage = () => {
- return (
-  <div>
-   PostPage
-  </div>
- );
+    return (
+        <div className='PostPage'>
+            <Posts/>
+            <Outlet/>
+        </div>
+    );
 };
 
 export {PostPage};

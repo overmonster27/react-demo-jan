@@ -3,4 +3,4 @@ export * from './HomePage/HomePage';
 export * from './NotFoundPage/NotFountPage';
 export * from './PostDetailsPage/PostDetailsPage';
 export * from './PostsPage/PostPage';
-export * from './UsersPage/UsersPage';
+export * from './TodosPage/UsersPage';

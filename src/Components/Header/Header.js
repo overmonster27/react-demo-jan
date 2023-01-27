@@ -4,8 +4,8 @@ const Header = () => {
     return (
         <div className='Header'>
             <NavLink to={'todo'}>Todos</NavLink>
-            <NavLink to={'post'}>Post</NavLink>
-            <NavLink to={'about'}>About</NavLink>
+            <NavLink to={'albums'}>Albums</NavLink>
+            <NavLink to={'comments'}>Comments</NavLink>
         </div>
     );
 };

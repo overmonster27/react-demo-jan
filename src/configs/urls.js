@@ -1,8 +1,9 @@
 const baseURL = 'https://jsonplaceholder.typicode.com';
 
-const urls ={
-    todos:'/todos',
-    users:'/users',
+const urls = {
+    todos: '/todos',
+    albums: '/albums',
+    comments: '/comments',
     post:'/posts'
 }
 

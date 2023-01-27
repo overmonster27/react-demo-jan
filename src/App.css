@@ -1,27 +1,70 @@
+
 .Header{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 
-    background: silver;
-
+    background: rgba(250, 100, 31, 0.54);
 }
 .Header a{
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
 }
 .Header a[class='active']{
-    color: red;
+    color: rgba(0, 73, 255, 0.51);
 }
-.Post{
+.ChildDiv{
+    border-radius: 5px;
     border: 2px solid black;
 
+    padding: 5px;
     margin: 5px;
 
     width: 200px;
+    height: 150px;
 }
-.PostPage{
+.Wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.PostContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+.CommentsContainer{
+    width: 50%;
+}
+.Comment{
+    border-radius: 5px;
+    border: 2px solid black;
+
+    padding: 5px;
+    margin: 10px;
+
+    height: 150px;
+}
+.CommentPost{
     display: flex;
     flex-direction: row;
+}
+.Buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.LeftBTN {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+    margin-left: 10px;
+}
+.RightBTN{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    margin-right: 10px;
 }

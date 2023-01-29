@@ -5,6 +5,7 @@ import './App.css';
 import {MainLayout} from "./layouts";
 import {UsersPage} from "./pages/usersPage/usersPage";
 import {PostPage} from "./pages";
+import {UserDetailPage} from "./pages/userDetailsPage/userDetailPage";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
                     <Route path={'users'} element={<UsersPage/>}>
-                        <Route path={':usersDetails'} element={}/>
+                        <Route path={':usersDetails'} element={<UserDetailPage/>}/>
                     </Route>
                     <Route path={'posts'} element={<PostPage/>}>
                         <Route path={':postDetails'}/>

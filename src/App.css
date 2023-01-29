@@ -8,8 +8,37 @@
 
     background: aqua;
 }
-.UsersPage{
+
+.Page {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+.Details {
+    display: flex;
+    justify-content: center;
+
+    height: 450px;
+    width: 50%;
+    border: 2px solid black;
+    margin: 10px;
+}
+.Content{
+    border: 2px solid black;
+
+    width: 50%;
+    margin: 10px;
+}
+.User{
+    border: 2px solid black;
+
+    margin: 5px;
+    padding: 5px;
+}
+.UserPost{
+    border: 2px solid black;
+
+    margin: 5px;
+    padding: 5px;
 }

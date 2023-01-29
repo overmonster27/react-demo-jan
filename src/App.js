@@ -3,9 +3,9 @@ import {Route, Routes} from "react-router-dom";
 import './App.css';
 
 import {MainLayout} from "./layouts/mainLayout";
-import {UsersPage} from "./pages";
+import {UserDetailsPage, UserPostsPage, UsersPage} from "./pages";
 import {PostPage} from "./pages";
-import {UserDetailPage} from "./pages/userDetailsPage/userDetailPage";
+import {PostDetailSPage} from "./pages/postDetailsPage/postDetailSPage";
 
 
 function App() {
@@ -14,10 +14,12 @@ function App() {
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
                     <Route path={'users'} element={<UsersPage/>}>
-                        <Route path={':usersDetails'} element={<UserDetailPage/>}/>
+                        <Route path={':id'} element={<UserDetailsPage/>}>
+                            <Route path={':id'} element={<UserPostsPage/>}/>
+                        </Route>
                     </Route>
                     <Route path={'posts'} element={<PostPage/>}>
-                        <Route path={':postDetails'}/>
+                        <Route path={':id'} element={<PostDetailSPage/>}/>
                     </Route>
                 </Route>
             </Routes>

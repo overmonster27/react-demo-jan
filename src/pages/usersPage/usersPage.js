@@ -3,7 +3,7 @@ import {Outlet} from "react-router-dom";
 
 const UsersPage = () => {
     return (
-        <div className='UsersPage'>
+        <div className='Page'>
             <Users/>
             <Outlet/>
         </div>

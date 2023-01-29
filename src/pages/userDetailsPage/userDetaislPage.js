@@ -1,11 +1,11 @@
 import {UserDetails} from "../../components/User/userDetails";
 
-const UserDetailPage = () => {
+const UserDetailsPage = () => {
  return (
-  <div>
+  <div  className='Details'>
    <UserDetails/>
   </div>
  );
 };
 
-export {UserDetailPage};
+export {UserDetailsPage};

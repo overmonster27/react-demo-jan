@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-import {userService} from "../../services/userService";
+import {userService} from "../../services";
 import {User} from "../User/User";
 
 const Users = () => {
@@ -12,7 +12,7 @@ const Users = () => {
     }, [])
 
     return (
-        <div>
+        <div className='Content'>
             {users.map(user => <User key={user.id} user={user}/>)}
         </div>
     );

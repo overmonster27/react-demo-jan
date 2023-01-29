@@ -36,7 +36,7 @@ const UserDetails = () => {
                 <li>CatchPhrase : {user.company.catchPhrase}</li>
                 <li>Bs : {user.company.bs}</li>
                 <button onClick={() => {
-                    navigate(id.toString())
+                    navigate('posts')
                 }}>Posts
                 </button>
             </>}

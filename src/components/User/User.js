@@ -7,7 +7,7 @@ const User = ({user}) => {
     const {id, name} = user;
 
     return (
-        <div onClick={() => {
+        <div className='User' onClick={() => {
             navigate(id.toString())
         }}>
             <div>Id:{id}</div>

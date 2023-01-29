@@ -2,8 +2,8 @@ import {Route, Routes} from "react-router-dom";
 
 import './App.css';
 
-import {MainLayout} from "./layouts";
-import {UsersPage} from "./pages/usersPage/usersPage";
+import {MainLayout} from "./layouts/mainLayout";
+import {UsersPage} from "./pages";
 import {PostPage} from "./pages";
 import {UserDetailPage} from "./pages/userDetailsPage/userDetailPage";
 

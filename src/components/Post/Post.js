@@ -6,7 +6,7 @@ const Post = ({post}) => {
 
     const {id, title} = post;
     return (
-        <div onClick={() => navigate(id.toString())}>
+        <div className="ContentElement" onClick={() => navigate(id.toString())}>
             <div>PostID:{id}</div>
             <div>Title:{title}</div>
         </div>

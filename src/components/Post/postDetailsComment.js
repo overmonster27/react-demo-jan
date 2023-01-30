@@ -1,8 +1,3 @@
-import {useNavigate, useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
-
-import {userService} from "../../services";
-
 const UserDetails = () => {
 
     const navigate = useNavigate();

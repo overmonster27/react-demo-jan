@@ -1,8 +1,8 @@
-import {UserPosts} from "../../components/User/userPosts";
+import {UserPosts} from "../../components";
 
 const UserPostsPage = () => {
  return (
-  <div className='UserPost'>
+  <div className='Information'>
       <UserPosts/>
   </div>
  );

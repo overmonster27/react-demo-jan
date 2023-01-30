@@ -2,10 +2,11 @@ import {Route, Routes} from "react-router-dom";
 
 import './App.css';
 
-import {MainLayout} from "./layouts/mainLayout";
+import {MainLayout} from "./layouts";
 import {UserDetailsPage, UserPostsPage, UsersPage} from "./pages";
 import {PostPage} from "./pages";
-import {PostDetailSPage} from "./pages/postDetailsPage/postDetailSPage";
+import {PostDetailSPage} from "./pages";
+import {CommentDetailSPage} from "./pages";
 
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
                         </Route>
                     </Route>
                     <Route path={'posts'} element={<PostPage/>}>
-                        <Route path={':id'} element={<PostDetailSPage/>}/>
+                        <Route path={':id'} element={<PostDetailSPage/>}>
+                            <Route path={':comments'} element={<CommentDetailSPage/>}/>
+                        </Route>
                     </Route>
                 </Route>
             </Routes>

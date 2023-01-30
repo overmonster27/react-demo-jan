@@ -1,9 +1,12 @@
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 
 import {postService} from "../../services";
 
+
 const PostDetails = () => {
+
+    const navigate = useNavigate();
 
     const {id} = useParams();
 
@@ -15,13 +18,17 @@ const PostDetails = () => {
         })
     }, [id]);
 
-    return (<div>
+    return (<div className='DetailsContainer'>
             <h1>Post details</h1>
             <ul>{post && <>
                 <li>id:{post.id}</li>
                 <li>UserId:{post.userId}</li>
                 <li>Title:{post.title}</li>
                 <li>Body:{post.body}</li>
+                <button onClick={() => {
+                    navigate('comments')
+                }}>Click
+                </button>
             </>}
             </ul>
         </div>

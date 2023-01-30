@@ -17,7 +17,7 @@ const UserDetails = () => {
         })
     }, [id]);
 
-    return (<div className="UserDetails">
+    return (<div className="DetailsContainer">
             <h1>User details</h1>
             <ul>{user && <>
                 <li>Id : {user.id}</li>

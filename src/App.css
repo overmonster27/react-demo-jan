@@ -1,3 +1,9 @@
+.Page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .Header {
     display: flex;
     justify-content: space-around;
@@ -8,34 +14,17 @@
 
     background: aqua;
 }
-.Page {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.Details {
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    align-items: flex-end;
 
-    height: 900px;
-}
-.UserPost{
-    border: 2px solid black;
+.Buttons{
+    text-decoration: none;
+    color: snow;
+    font-size: 40px;
+}.Buttons:hover{
+    color: red;
+}.Buttons.active{
+    color: black;
+  }
 
-    margin: 5px;
-    padding: 5px;
-    width: 525px;
-}
-.UserDetails{
-    border: 2px solid black;
-
-    width: 525px;
-
-    margin: 5px;
-    padding: 5px;
-}
 .ContentElement{
     border: 2px solid black;
 
@@ -43,4 +32,37 @@
 
     margin: 5px;
     padding: 5px;
+}
+
+.DetailsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid black;
+
+    width: 525px;
+
+    margin: 5px;
+    padding: 5px;
+}
+
+.Information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+
+    margin: 5px;
+    padding: 5px;
+    width: 525px;
+}
+
+.Posts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

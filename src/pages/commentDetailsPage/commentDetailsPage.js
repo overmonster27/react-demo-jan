@@ -1,7 +1,9 @@
-const PostDetailSPage = () => {
-  return <div className="Details">
-    
-  </div>;
+import {PostDetailsComment} from "../../components";
+
+const CommentDetailSPage = () => {
+    return <div className="Details">
+        <PostDetailsComment/>
+    </div>;
 };
 
-export { PostDetailSPage };
+export {CommentDetailSPage};

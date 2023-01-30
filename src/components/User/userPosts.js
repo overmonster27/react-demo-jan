@@ -1,7 +1,9 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
+
 import {userService} from "../../services";
 import {Post} from "../Post/Post";
+
 
 const UserPosts = () => {
 
@@ -15,7 +17,8 @@ const UserPosts = () => {
     console.log(post)
 
     return (
-        <div>
+        <div className='Posts'>
+            <h1>Posts</h1>
             {post.map(post => <Post key={post.id} post={post}/>)}
         </div>
     );

@@ -1,7 +1,7 @@
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 
 import {MainLayout} from "./layouts";
-import {AlbumPage, CommentsPage, NotFoundPage, TodosPage} from "./Pages";
+import {AlbumPage, CommentsPage, HomePage, NotFoundPage, TodosPage} from "./Pages";
 import {Post} from "./Components";
 
 import './App.css';
@@ -12,6 +12,8 @@ function App() {
         <div className="App">
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
+                    <Route index element={<Navigate to={'home'}/>}/>
+                    <Route path={'home'} element={<HomePage/>}/>
                     <Route path={'todo'} element={<TodosPage/>}/>
                     <Route path={'albums'} element={<AlbumPage/>}/>
                     <Route path={'comments'} element={<CommentsPage/>}>

@@ -1,9 +1,9 @@
 import {Dog} from "../Dog/Dog";
 
-const Dogs = ({dogs}) => {
+const Dogs = ({dogs, dispatch}) => {
  return (
   <div>
-      {dogs.map(dog=> <Dog key={dog.id} dog={dog}/>)}
+      {dogs.map(dog=> <Dog key={dog.id} dispatch={dispatch} dog={dog}/>)}
   </div>
  );
 };

@@ -1,40 +1,43 @@
 import {Dogs} from "../../components";
 import {useReducer, useRef} from "react";
+import {addDog, dogActionTypes} from "./actions/action";
 
 
 const reducer = (state, action) => {
-    // eslint-disable-next-line default-case
+
     switch (action.type) {
-        case "NEW_DOG":
+        case dogActionTypes.ADD_DOG:
             const [lastDog] = state.dogs.slice(-1);
-            const id = lastDog ? lastDog + 1 : 0;
+            const id = lastDog ? lastDog.id + 1 : 0;
             return {...state, dogs: [...state.dogs, {id, name: action.payload}]};
-        case "DELETE_DOG":
+
+        case dogActionTypes.DELETE_DOG:
             const deleteDog = state.dogs.findIndex(dog => dog.id === action.payload);
-            state.dogs.splice(deleteDog, 1);
-            return {...state};
+            const newDogList = state.dogs.splice(deleteDog, 1);
+            return {...state, dogs: newDogList};
+
         default:
             return {...state}
     }
 }
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const dogInput = useRef();
-
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const [state, dispatch] = useReducer(reducer, {dogs: []}, (data) => data);
-
-const createDog = () => {
-    dispatch({type: "NEW_DOG", payload: dogInput.current.value})
-    dogInput.current.value = ''
-}
-
 const DogsPage = () => {
+
+    const dogInput = useRef();
+
+    const [state, dispatch] = useReducer(reducer, {dogs: []}, (data) => data);
+
+    const createDog = () => {
+        dispatch(addDog(dogInput.current.value))
+        dogInput.current.value = ''
+    }
+
+
     return (
         <div>
             <input type='text' ref={dogInput}/>
             <button onClick={createDog}>New dog</button>
-            <Dogs dogs={state.dogs}/>
+            <Dogs dogs={state.dogs} dispatch={dispatch}/>
         </div>
     );
 };

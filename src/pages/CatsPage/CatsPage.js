@@ -1,40 +1,40 @@
 import {Cats} from "../../components";
 import {useReducer, useRef} from "react";
+import {addCat, catActionTypes} from "./actions/actions";
 
-const reducer = (state, action) => {
-    // eslint-disable-next-line default-case
+const catsReducer = (state, action) => {
     switch (action.type) {
-        case "NEW_CAT":
-            const [lastCat] = state.cats.slice(-1);
-            const id = lastCat ? lastCat + 1 : 0;
-            return {...state, cats: [...state.cats, {id, name: action.payload}]};
-        case "DELETE_CAT":
-            const deleteCat = state.cats.findIndex(cat => cat.id === action.payload);
-            state.cats.splice(deleteCat, 1);
-            return {...state};
+        case catActionTypes.ADD_CAT:
+            const id = state.catCounter;
+            return {...state, cats: [...state.cats, {id, name: action.payload}], catCounter: state.catCounter++};
+        case catActionTypes.DELETE_CAT:
+            const catIndex = state.cats.findIndex(cat => cat.id === action.payload);
+            const newCats = state.cats.filter(cat => cat.id !== catIndex);
+            return {...state, cats: newCats};
         default:
             return {...state}
     }
 }
 
-
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const catInput = useRef();
-
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const [state, dispatch] = useReducer(reducer, {cats: []}, (data) => data);
-
-const createCat = () => {
-    dispatch({type: "NEW_CAT", payload: catInput.current.value})
-    catInput.current.value = ''
-}
-
 const CatsPage = () => {
+
+    const catInput = useRef();
+
+    const initialState = {cats: [], catCounter: 0}
+
+    const [state, dispatch] = useReducer(catsReducer, initialState, (state) => state);
+
+    const createCat = () => {
+        dispatch(addCat(catInput.current.value))
+        catInput.current.value = ''
+    }
+
+
     return (
         <div>
             <input type='text' ref={catInput}/>
-            <button onClick={createCat}>New dog</button>
-            <Cats cats={state.cats}/>
+            <button onClick={createCat}>New cat</button>
+            <Cats cats={state.cats} dispatch={dispatch}/>
         </div>
     );
 };

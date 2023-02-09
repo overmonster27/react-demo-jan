@@ -1,0 +1,46 @@
+.Car {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    height: 120px;
+    width: 120px;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    padding: 10px;
+    margin: 10px;
+
+    background: linear-gradient(to left top, rgba(145, 66, 29, 0.54), rgba(11, 51, 138, 0.51), transparent);
+
+    transition: 2s;
+}
+
+.Car:hover {
+    transition: 1s;
+    font-size: 30px;
+
+    height: 200px;
+    width: 200px;
+}
+
+.Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 3px;
+
+    color: snow;
+    background: #259898;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: default;
+}
+.Buttons{
+    display: flex;
+}

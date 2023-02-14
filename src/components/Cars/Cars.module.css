@@ -4,3 +4,8 @@
     flex-wrap: wrap;
     align-items: center;
 }
+.Buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

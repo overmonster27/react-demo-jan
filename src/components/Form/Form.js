@@ -21,7 +21,7 @@ const Form = () => {
     const save = async (car) => {
         await dispatch(carActions.create({car}))
         reset()
-    }
+    };
 
     useEffect(() => {
         if (carForUpdate) {
@@ -29,17 +29,17 @@ const Form = () => {
             setValue('price', carForUpdate.price)
             setValue('year', carForUpdate.year)
         }
-    }, [carForUpdate, setValue])
+    }, [carForUpdate, setValue]);
 
     const update = async (car) => {
         await dispatch(carActions.updateById({id: carForUpdate.id, car}))
         reset()
-    }
+    };
 
     return (
         <div>
             <form className={css.Form} onSubmit={handleSubmit(carForUpdate ? update : save)}>
-                <input className={css.Input} type='text' placeholder={'Brand'}{...register('brand')} />
+                <input className={css.Input} type='text' placeholder={'Brand'}{...register('brand')}/>
                 <input className={css.Input} type='text'
                        placeholder={'Price'}{...register('price', {valueAsNumber: true})} />
                 <input className={css.Input} type='text'

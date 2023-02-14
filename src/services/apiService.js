@@ -1,8 +1,8 @@
 import axios from "axios";
+import {createBrowserHistory} from "history";
 
 import {baseURL} from "../configs";
 import {authService} from "./authService";
-import {createBrowserHistory} from "history";
 
 const history = createBrowserHistory();
 
@@ -15,7 +15,7 @@ apiService.interceptors.request.use((config) => {
         config.headers.Authorization = `Bearer ${access}`
     }
     return config
-})
+});
 
 let isRefreshing = false;
 

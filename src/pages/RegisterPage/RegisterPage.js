@@ -1,7 +1,8 @@
 import {useForm} from "react-hook-form";
-import {userService} from "../../services";
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
+
+import {userService} from "../../services";
 
 const RegisterPage = () => {
 
@@ -20,7 +21,6 @@ const RegisterPage = () => {
         }
     };
     return (<div>
-
             <div>
                 <form onSubmit={handleSubmit(registerUser)}>
                     <input type={"text"} placeholder={'User name'} {...register('username')}/>

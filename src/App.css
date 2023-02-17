@@ -1,0 +1,13 @@
+.Cars{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+.Car {
+    border: 2px solid black;
+    margin: 5px;
+    width: 100px;
+}

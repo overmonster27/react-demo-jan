@@ -25,7 +25,6 @@ const getById = createAsyncThunk(
     async ({id}, {rejectWithValue}) => {
         try {
             const {data} = await userService.getById(id);
-
             return data
         } catch (e) {
             return rejectWithValue(e.response.data)

@@ -1,0 +1,11 @@
+.Container{
+    display: flex;
+    flex-direction: row;
+}
+
+.Posts{
+    min-width: 50%;
+}
+.UserDetails{
+    position: fixed;
+}

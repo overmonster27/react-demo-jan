@@ -1,0 +1,11 @@
+.Container{
+    display: flex;
+    flex-direction: row;
+}
+.Comments{
+    width: 50%;
+}
+.Details{
+    position: fixed;
+    max-width: 50%;
+}

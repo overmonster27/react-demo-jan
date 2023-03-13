@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {userActions} from "../../redux/slices/userSlice";
+import {userActions} from "../../redux";
 
 const User = ({user}) => {
 
